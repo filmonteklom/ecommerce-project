@@ -12,6 +12,7 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/ResetPassword/ResetPassword';
 import DashboardLayout from './DashboardLayout/DashboardLayout';
 import SearchResults from './Dashboard/Search/SearchResult';
+import './index.css'
 
 function App() {
   return (
