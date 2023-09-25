@@ -1,9 +1,11 @@
 import React from 'react';
 import { Route, Link, Routes } from 'react-router-dom';
 import { Container, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import './Dashboard.css';
 
 
 // Dashboard Home Component
+
 const DashboardHome = () => <div>Dashboard Home</div>;
 
 // Orders Component
@@ -15,8 +17,9 @@ const Inventory = () => <div>Inventory Page</div>;
 // Main Dashboard Component
 const Dashboard = () => {
   return (
+
     <Container maxWidth="xl" style={{ display: 'flex' }}>
-      <Drawer variant="permanent" style={{ width: '240px', flexShrink: 0 }}>
+      <Drawer variant="permanent" sx={{ background: 'blue', flexShrink: 0 }}>
         <List>
           <ListItem button component={Link} to="/dashboard/home">
             <ListItemText primary="Home" />
@@ -29,7 +32,7 @@ const Dashboard = () => {
           </ListItem>
         </List>
       </Drawer>
-      <Container style={{ flexGrow: 1, marginLeft: '240px' }}>
+      <Container style={{ flexGrow: 1, marginLeft: '240px', background: 'blue'}}>
       
         <Routes> 
           <Route path="/home" element={<DashboardHome />} />
@@ -37,7 +40,10 @@ const Dashboard = () => {
           <Route path="/inventory" element={<Inventory />} />
         </Routes>
       </Container>
-    </Container>
+      </Container>
+  
+
+ 
   );
 };
 

@@ -11,13 +11,12 @@ import LogoutButton from './components/LogoutButton/LogoutButton';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/ResetPassword/ResetPassword';
 import DashboardLayout from './DashboardLayout/DashboardLayout';
-
+import SearchResults from './Dashboard/Search/SearchResult';
 
 function App() {
   return (
     <Router>
       <div>
-      {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Layout />} />
         <Route path="/login" element={<Layout><LoginForm /></Layout>} />
@@ -26,8 +25,9 @@ function App() {
  <Route path="/dashboard" element={<DashboardLayout><Dashboard /></DashboardLayout>} />
 <Route path="/forgotpassword"element={<ForgotPassword />} />    
 <Route path="/Resetpassword/*" element={ <ResetPassword />} />
-        </Routes>
-      </div>
+<Route path="/search" element={<SearchResults />} />
+   </Routes>
+     </div>
     </Router>
   );
 }
