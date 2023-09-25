@@ -1,44 +1,40 @@
 import React, { useState } from 'react';
 import { Button, TextField, Container, Paper, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 function LoginForm() {
- 
-  const [formData, setFormData] = useState({
-    username: '',
-    password: '',
-  });
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Perform login logic here, validate user credentials
-    const { username, password } = formData;
-
-    if (username === 'exampleUser' && password === 'examplePassword') {
-      // Assuming login is successful, set the loggedIn state to true
-      setLoggedIn(true);
-    } else {
-      // Handle login failure, show an error message, etc.
-      alert('Login failed. Please check your credentials.');
-    }
+    // No validation, directly set loggedIn to true
+    setLoggedIn(true);
+    navigate('/dashboard/');
   };
 
-  // Redirect to the dashboard if logged in
-  // if (loggedIn) {
-  //   return <Redirect to="/dashboard" />;
-  // }
-
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (email === '' && password === '') {
+  //     setLoggedIn(true);
+  //   } else {
+  //     alert('Login failed. Please check your credentials.');
+  //   }
+  // };
 
   return (
     <Container component="main" maxWidth="sm">
@@ -56,8 +52,8 @@ function LoginForm() {
                 variant="outlined"
                 fullWidth
                 required
-                value={formData.username}
-            onChange={handleInputChange}
+                value={email}
+                onChange={handleEmailChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -68,7 +64,8 @@ function LoginForm() {
                 variant="outlined"
                 fullWidth
                 required
-                
+                value={password}
+                onChange={handlePasswordChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -87,12 +84,12 @@ function LoginForm() {
               </Button>
             </Grid>
             <Grid item xs={12}>
-              <Button component={Link} to="/forgot-password" fullWidth>
+              <Button component={Link} to="/forgotpassword" fullWidth>
                 Forgot Password?
               </Button>
             </Grid>
 				<Grid item xs={12}>
-              <Button component={Link} to="/forgot-password" fullWidth>
+              <Button component={Link} to="/Resetpassword" fullWidth>
                 Reset Password?
               </Button>
             </Grid>

@@ -2,18 +2,17 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import LogoutButton from '../../components/LogoutButton/LogoutButton';
+import './Header.css';
 
 function DashboardHeader() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6" style={{ flexGrow: 1 }}>
+        <Typography variant="h6" style={{ flexGrow: 1, height: '110px' }}>
           Dashboard
         </Typography>
-        <Button color="inherit" component={Link} to="/dashboard">
-          Dashboard Home
-        </Button>
-        {/* Add more dashboard-specific navigation buttons as needed */}
+        <LogoutButton />
       </Toolbar>
     </AppBar>
   );

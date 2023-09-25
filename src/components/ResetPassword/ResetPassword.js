@@ -16,7 +16,7 @@ function ResetPassword() {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" style={{padding: '100px'}}>
       <Typography variant="h4" gutterBottom>
         Reset Password
       </Typography>

@@ -13,15 +13,16 @@ function ForgotPassword() {
     } else {
       setMessage('Please enter your email.');
     }
+
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" style={{padding: '100px'}}>
       <Typography variant="h4" gutterBottom>
         Forgot Password
       </Typography>
-      <form onSubmit={handleSubmit}>
-        <TextField
+      <form onSubmit={handleSubmit} >
+        <TextField 
           label="Email"
           variant="outlined"
           fullWidth
