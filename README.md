@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+
+after you cloned the project use npm install
+and then run npm run dev it will work
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
