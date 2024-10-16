@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* #container-div{
+ padding-left: 60rem;
+ } */
+ #container-div {
+	position: absolute;
+	/* right: 0;
+	top: 0; */
+	/* left 60; */
+	margin-left: 60rem;
+	border-radius: 1rem;
+ }
